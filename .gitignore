@@ -1,5 +1,8 @@
 config.py
-
+config.ini
+my_account.session
+test.py
+userbot.py
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
