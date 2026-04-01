@@ -1,14 +1,20 @@
-import openai  # DeepSeek использует совместимый с OpenAI API
+from config import *
+import openai  # For DeepSeek req
+
 
 client = openai.OpenAI(
-    api_key="sk-2ca5b4ee6e46446a8d5fbf652cd262c7",
+    api_key=API_KEY,
     base_url="https://api.deepseek.com"
 )
 
-response = client.chat.completions.create(
-    model="deepseek-chat",
-    messages=[
-        {"role": "user", "content": "Привет, друг, ответь на русском пожалуйста, а ещё скажи какая ты модель?"}
-    ]
-)
-print(response.choices[0].message.content)
+
+def process(prompt):
+    response = client.chat.completions.create(
+        model="deepseek-chat",
+        messages=[
+            {"role": "system", "content": PRED_PROMPT},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    print("proc done")
+    return response.choices[0].message.content

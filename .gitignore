@@ -1,8 +1,10 @@
 config.py
 config.ini
-my_account.session
 test.py
+test1.py
 userbot.py
+chats.txt
+*.session
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
